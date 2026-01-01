@@ -7,6 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <AssemblyName>0kb-finder</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

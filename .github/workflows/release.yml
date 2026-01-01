@@ -24,10 +24,10 @@ jobs:
         run: dotnet publish -c Release -o ./publish
 
       - name: Zip Build Output
-        run: Compress-Archive -Path ./publish/* -DestinationPath ./acomp-win-x64.zip
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./0kb-finder-win-x64.zip
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ./acomp-win-x64.zip
+          files: ./0kb-finder-win-x64.zip
           generate_release_notes: true

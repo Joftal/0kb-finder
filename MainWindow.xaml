@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:acomp"
         mc:Ignorable="d"
         Title="0KB文件扫描器" Height="700" Width="900"
+        Icon="icon.ico"
         WindowStartupLocation="CenterScreen"
         Background="#F5F5F5"
         FontFamily="Segoe UI">

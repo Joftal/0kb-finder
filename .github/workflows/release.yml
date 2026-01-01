@@ -1,0 +1,33 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Publish
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Zip Build Output
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./acomp-win-x64.zip
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ./acomp-win-x64.zip
+          generate_release_notes: true
